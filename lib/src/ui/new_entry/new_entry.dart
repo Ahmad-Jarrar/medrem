@@ -192,9 +192,7 @@ class _NewEntryState extends State<NewEntry> {
                     onPressed: () {
                       String medicineName;
                       int dosage;
-                      //--------------------Error Checking------------------------
-                      //Had to do error checking in UI
-                      //Due to unoptimized BLoC value-grabbing architecture
+          
                       if (nameController.text == "") {
                         _newEntryBloc.submitError(EntryError.NameNull);
                         return;
@@ -222,7 +220,7 @@ class _NewEntryState extends State<NewEntry> {
                         _newEntryBloc.submitError(EntryError.StartTime);
                         return;
                       }
-                      //---------------------------------------------------------
+                     
                       String medicineType = _newEntryBloc
                           .selectedMedicineType.value
                           .toString()
@@ -234,7 +232,7 @@ class _NewEntryState extends State<NewEntry> {
                           makeIDs(24 / _newEntryBloc.selectedInterval$.value);
                       List<String> notificationIDs = intIDs
                           .map((i) => i.toString())
-                          .toList(); //for Shared preference
+                          .toList();
 
                       Medicine newEntryMedicine = Medicine(
                         notificationIDs: notificationIDs,
@@ -368,7 +366,6 @@ class _NewEntryState extends State<NewEntry> {
           platformChannelSpecifics);
       hour = ogValue;
     }
-    //await flutterLocalNotificationsPlugin.cancelAll();
   }
 }
 

@@ -5,11 +5,6 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class GlobalBloc {
-  // BehaviorSubject<Day> _selectedDay$;
-  // BehaviorSubject<Day> get selectedDay$ => _selectedDay$.stream;
-
-  // BehaviorSubject<Period> _selectedPeriod$;
-  // BehaviorSubject<Period> get selectedPeriod$ => _selectedPeriod$.stream;
 
   BehaviorSubject<List<Medicine>> _medicineList$;
   BehaviorSubject<List<Medicine>> get medicineList$ => _medicineList$;
